@@ -1,0 +1,8 @@
+import styled from 'styled-components';
+
+export const StyledLink = styled.NavLink`
+  color: #212121;
+  &.active {
+    color: orangered;
+  }
+`;
