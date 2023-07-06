@@ -17,9 +17,7 @@ export const Layout = () => {
         </s.Container>
       </s.Header>
       <main>
-        <s.Container>
-          <Outlet />
-        </s.Container>
+        <Outlet />
       </main>
     </>
   );
