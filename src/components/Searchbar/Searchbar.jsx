@@ -20,12 +20,12 @@ export default function Searchbar({ onSubmit }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" value={value} onChange={handleChange} />
+    <s.Form onSubmit={handleSubmit}>
+      <s.Input type="text" value={value} onChange={handleChange} />
 
       <button type="submit" aria-label="Search">
         Search
       </button>
-    </form>
+    </s.Form>
   );
 }

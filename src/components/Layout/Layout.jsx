@@ -4,18 +4,22 @@ import * as s from './Layout.styled';
 export const Layout = () => {
   return (
     <>
-      <header>
-        <ul>
-          <li>
-            <s.StyledLink to="/">Home</s.StyledLink>
-          </li>
-          <li>
-            <s.StyledLink to="/movies">Movies</s.StyledLink>
-          </li>
-        </ul>
-      </header>
+      <s.Header>
+        <s.Container>
+          <s.List>
+            <li>
+              <s.StyledLink to="/">Home</s.StyledLink>
+            </li>
+            <li>
+              <s.StyledLink to="/movies">Movies</s.StyledLink>
+            </li>
+          </s.List>
+        </s.Container>
+      </s.Header>
       <main>
-        <Outlet />
+        <s.Container>
+          <Outlet />
+        </s.Container>
       </main>
     </>
   );
