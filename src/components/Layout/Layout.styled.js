@@ -25,5 +25,8 @@ export const List = styled.ul`
   list-style: none;
   li {
     font-weight: bold;
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
   }
 `;
