@@ -7,6 +7,8 @@ const Home = () => {
   useEffect(() => {}, []);
 
   const [data, setData] = useState([]);
+  setData([...data]);
+
   return (
     <>
       <Section title="Trending today">
