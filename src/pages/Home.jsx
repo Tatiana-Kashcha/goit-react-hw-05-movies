@@ -10,6 +10,8 @@ const Home = () => {
   const [MoviesPerPage, setMoviesPerPage] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
 
+  console.log(moviesTrending);
+
   useEffect(() => {
     setIsLoading(true);
 
