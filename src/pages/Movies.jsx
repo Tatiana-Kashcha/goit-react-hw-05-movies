@@ -1,25 +1,22 @@
 // import { Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Searchbar from 'components/Searchbar/Searchbar';
-import { getMovieApi } from 'api/getMoviesApi';
+import { searchMovies } from 'api/searchMovies';
 import { MoviesGallery } from 'components/MoviesGallery/MoviesGallery';
 
 const Movies = () => {
   const [searchText, setSearchText] = useState('');
-  const [dataMovie, setDataMovie] = useState([]);
+  const [dataMovies, setDataMovies] = useState([]);
 
   useEffect(() => {
     if (!searchText) {
       return;
     }
 
-    getMovieApi(searchText)
-      .then(response => {
-        setDataMovie([...response.results]);
+    searchMovies(searchText)
+      .then(({ data: { results } }) => {
+        setDataMovies([...results]);
       })
-      // .then(({ response: results }) => {
-      //   setDataMovie([...results]);
-      // })
       .catch(err => {
         console.log('ERROR', err);
       })
@@ -33,7 +30,7 @@ const Movies = () => {
   return (
     <>
       <Searchbar onSubmit={handleSearch} />
-      <MoviesGallery data={dataMovie} />
+      <MoviesGallery data={dataMovies} />
     </>
   );
 };
