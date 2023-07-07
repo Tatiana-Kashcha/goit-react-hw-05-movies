@@ -7,6 +7,8 @@ const MovieDetails = () => {
   const { movieId } = useParams();
   const [dataMovieId, setDataMovieId] = useState({});
 
+  console.log(dataMovieId);
+
   useEffect(() => {
     if (!movieId) {
       return;
@@ -14,8 +16,8 @@ const MovieDetails = () => {
     // setIsLoading(true);
 
     getMovieId(movieId)
-      .then(({ data: { results } }) => {
-        setDataMovieId({ results });
+      .then(data => {
+        setDataMovieId(data);
       })
       .catch(err => {
         console.log('ERROR', err);
