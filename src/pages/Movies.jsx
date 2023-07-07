@@ -1,4 +1,3 @@
-// import { Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Section } from 'components/Section/Section';
 import Searchbar from 'components/Searchbar/Searchbar';
