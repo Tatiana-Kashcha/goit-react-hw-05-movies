@@ -1,4 +1,3 @@
-import { Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieId } from 'api/getMovieId';
@@ -36,7 +35,6 @@ const MovieDetails = () => {
       <Section>
         {isLoading && Loading.arrows()}
         <h2>Page MovieDetails</h2>
-        <Outlet />
       </Section>
     </>
   );

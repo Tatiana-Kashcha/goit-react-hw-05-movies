@@ -1,5 +1,5 @@
 import * as s from './MoviesGalleryItem.styled';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export const MoviesGalleryItem = ({ title }) => {
   return (
@@ -7,4 +7,8 @@ export const MoviesGalleryItem = ({ title }) => {
       <s.Title>{title}</s.Title>
     </>
   );
+};
+
+MoviesGalleryItem.propTypes = {
+  title: PropTypes.string.isRequired,
 };
