@@ -1,18 +1,16 @@
+import { Link } from 'react-router-dom';
 import { MoviesGalleryItem } from '../MoviesGalleryItem/MoviesGalleryItem';
 import * as s from './MoviesGallery.styled';
 // import PropTypes from 'prop-types';
 
-export const MoviesGallery = ({ data, details }) => {
+export const MoviesGallery = ({ data }) => {
   return (
     <s.List>
       {data.map(({ id, title }) => (
-        <li
-          key={id}
-          onClick={() => {
-            details(id);
-          }}
-        >
-          <MoviesGalleryItem title={title} />
+        <li key={id}>
+          <Link key={id} to={`${id}`}>
+            <MoviesGalleryItem title={title} />
+          </Link>
         </li>
       ))}
     </s.List>
@@ -26,5 +24,4 @@ export const MoviesGallery = ({ data, details }) => {
 //       title: PropTypes.string,
 //     }).isRequired
 //   ).isRequired,
-//   details: PropTypes.func.isRequired,
 // };

@@ -33,18 +33,11 @@ const Home = () => {
       });
   }, []);
 
-  const detailsMoviesTrending = id => {};
-
   return (
     <>
       <Section title="Trending today">
         {isLoading && Loading.arrows()}
-        {MoviesPerPage > 0 && (
-          <MoviesGallery
-            data={moviesTrending}
-            details={detailsMoviesTrending}
-          />
-        )}
+        {MoviesPerPage > 0 && <MoviesGallery data={moviesTrending} />}
       </Section>
     </>
   );
