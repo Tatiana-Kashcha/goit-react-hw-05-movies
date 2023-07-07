@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieCast } from 'api/getMovieCast';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
+import * as s from './Cast.styled';
 
 export const Cast = () => {
   const { movieId } = useParams();
@@ -18,7 +19,7 @@ export const Cast = () => {
 
     getMovieCast(movieId)
       .then(data => {
-        setDataCast(data);
+        setDataCast(data.data.cast);
       })
       .catch(err => {
         console.log('ERROR', err);
@@ -33,11 +34,11 @@ export const Cast = () => {
     <>
       {isLoading && Loading.arrows()}
       <s.List>
-        {dataCast.map(({ id, title, photo, tags }) => (
+        {dataCast.map(({ id, character, profile_path, name }) => (
           <li key={id}>
-            <img src={photo} alt={title} />
-            <p>{title}</p>
-            <p>Character: {tags}</p>
+            <img src={profile_path} alt={name} />
+            <p>{name}</p>
+            <p>Character: {character}</p>
           </li>
         ))}
       </s.List>

@@ -2,12 +2,12 @@ import * as s from './Section.styled';
 import PropTypes from 'prop-types';
 
 export const Section = ({ title, children }) => (
-  <section>
+  <s.Section>
     <s.Container>
       {title && <s.SectionTitle>{title}</s.SectionTitle>}
       {children}
     </s.Container>
-  </section>
+  </s.Section>
 );
 
 Section.propTypes = {

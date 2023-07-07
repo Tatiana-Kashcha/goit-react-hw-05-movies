@@ -4,8 +4,8 @@ import * as s from './RenderDetails.styled';
 export const RenderDetails = data => {
   return (
     <>
-      <div>
-        <p>Additional information</p>
+      <s.Div>
+        <s.Description>Additional information</s.Description>
         <s.List>
           <li>
             <Link>Cast</Link>
@@ -14,7 +14,7 @@ export const RenderDetails = data => {
             <Link>Reviews</Link>
           </li>
         </s.List>
-      </div>
+      </s.Div>
     </>
   );
 };
