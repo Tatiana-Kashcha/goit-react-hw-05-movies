@@ -16,5 +16,5 @@ export const Div = styled.div`
 `;
 
 export const Description = styled.p`
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 `;
