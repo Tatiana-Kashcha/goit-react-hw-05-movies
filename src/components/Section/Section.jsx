@@ -4,7 +4,7 @@ import * as s from './Section.styled';
 export const Section = ({ title, children }) => (
   <section>
     <s.Container>
-      <h2>{title}</h2>
+      <s.SectionTitle>{title}</s.SectionTitle>
       {children}
     </s.Container>
   </section>

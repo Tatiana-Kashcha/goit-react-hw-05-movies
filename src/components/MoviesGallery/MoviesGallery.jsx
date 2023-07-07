@@ -5,9 +5,9 @@ import * as s from './MoviesGallery.styled';
 export const MoviesGallery = ({ data }) => {
   return (
     <s.List>
-      {data.map(({ id, title, name }) => (
+      {data.map(({ id, title }) => (
         <li key={id} onClick={() => {}}>
-          <MoviesGalleryItem title={title} name={name} />
+          <MoviesGalleryItem title={title} />
         </li>
       ))}
     </s.List>

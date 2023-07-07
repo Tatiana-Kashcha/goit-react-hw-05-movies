@@ -1,11 +1,10 @@
 import * as s from './MoviesGalleryItem.styled';
 // import PropTypes from 'prop-types';
 
-export const MoviesGalleryItem = ({ title, name }) => {
+export const MoviesGalleryItem = ({ title }) => {
   return (
     <>
       <s.Title>{title}</s.Title>
-      <s.Title>{name}</s.Title>
     </>
   );
 };

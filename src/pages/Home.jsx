@@ -2,17 +2,27 @@ import { useState, useEffect } from 'react';
 // import { getMovieApi } from 'api/getMoviesApi';
 import { Section } from 'components/Section/Section';
 import { MoviesGallery } from 'components/MoviesGallery/MoviesGallery';
+import { fetchMovies } from 'api/fetchMovies';
 
 const Home = () => {
-  useEffect(() => {}, []);
+  const [movies, setMovies] = useState([]);
+  const [page, setPage] = useState(1);
 
-  const [data, setData] = useState([]);
-  setData([...data]);
+  useEffect(() => {
+    fetchMovies(page)
+      .then(({ data: { results } }) => {
+        setMovies([...results]);
+      })
+      .catch(err => {
+        console.log('ERROR', err);
+      })
+      .finally(() => {});
+  }, [page]);
 
   return (
     <>
       <Section title="Trending today">
-        <MoviesGallery data={data} />
+        <MoviesGallery data={movies} />
       </Section>
     </>
   );

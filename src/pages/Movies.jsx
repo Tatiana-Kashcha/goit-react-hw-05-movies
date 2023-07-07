@@ -13,17 +13,17 @@ const Movies = () => {
       return;
     }
 
-    const getMovie = async () => {
-      try {
-        const dataMovieGallery = await getMovieApi(searchText);
-        console.log(dataMovieGallery);
-        setDataMovie([...dataMovieGallery]);
-      } catch (error) {
-        console.log('ERROR', error);
-      } finally {
-      }
-    };
-    getMovie();
+    getMovieApi(searchText)
+      .then(response => {
+        setDataMovie([...response.results]);
+      })
+      // .then(({ response: results }) => {
+      //   setDataMovie([...results]);
+      // })
+      .catch(err => {
+        console.log('ERROR', err);
+      })
+      .finally(() => {});
   }, [searchText]);
 
   const handleSearch = searchText => {
