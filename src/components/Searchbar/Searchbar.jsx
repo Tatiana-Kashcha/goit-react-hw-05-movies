@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import * as s from './Searchbar.styled';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import PropTypes from 'prop-types';
 
 export default function Searchbar({ onSubmit }) {
   const [value, setValue] = useState('');
@@ -29,3 +30,7 @@ export default function Searchbar({ onSubmit }) {
     </s.Form>
   );
 }
+
+Searchbar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
