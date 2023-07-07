@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { getMovieId } from 'api/getMovieId';
 import { Section } from 'components/Section/Section';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
+import { RenderDetails } from 'components/RenderDetails/RenderDetails';
+import { Cast } from 'components/Cast/Cast';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -34,7 +36,8 @@ const MovieDetails = () => {
     <>
       <Section>
         {isLoading && Loading.arrows()}
-        <h2>Page MovieDetails</h2>
+        <RenderDetails data={dataMovieId} />
+        <Cast />
       </Section>
     </>
   );
