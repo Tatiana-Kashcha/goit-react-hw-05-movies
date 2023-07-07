@@ -8,6 +8,7 @@ import { searchMovies } from 'api/searchMovies';
 const Movies = () => {
   const [searchText, setSearchText] = useState('');
   const [dataMovies, setDataMovies] = useState([]);
+  const [searchMoviesPerPage, setSearchMoviesPerPage] = useState(0);
 
   useEffect(() => {
     if (!searchText) {
@@ -17,6 +18,7 @@ const Movies = () => {
     searchMovies(searchText)
       .then(({ data: { results } }) => {
         setDataMovies([...results]);
+        setSearchMoviesPerPage(results.length);
       })
       .catch(err => {
         console.log('ERROR', err);
@@ -32,7 +34,7 @@ const Movies = () => {
     <>
       <Section>
         <Searchbar onSubmit={handleSearch} />
-        <MoviesGallery data={dataMovies} />
+        {searchMoviesPerPage > 0 && <MoviesGallery data={dataMovies} />}
       </Section>
     </>
   );
