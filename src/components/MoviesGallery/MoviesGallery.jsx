@@ -1,6 +1,6 @@
 import { MoviesGalleryItem } from '../MoviesGalleryItem/MoviesGalleryItem';
 import * as s from './MoviesGallery.styled';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 export const MoviesGallery = ({ data, details }) => {
   return (
@@ -19,12 +19,12 @@ export const MoviesGallery = ({ data, details }) => {
   );
 };
 
-MoviesGallery.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      title: PropTypes.string,
-    }).isRequired
-  ).isRequired,
-  details: PropTypes.func.isRequired,
-};
+// MoviesGallery.propTypes = {
+//   data: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       id: PropTypes.number.isRequired,
+//       title: PropTypes.string,
+//     }).isRequired
+//   ).isRequired,
+//   details: PropTypes.func.isRequired,
+// };
