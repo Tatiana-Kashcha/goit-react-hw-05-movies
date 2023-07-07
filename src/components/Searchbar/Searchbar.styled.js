@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const Form = styled.form`
   display: flex;
-  margin-top: 20px;
+  padding-top: 20px;
+  margin-bottom: 20px;
   button {
     padding: 1px 4px;
     border: 1px solid rgb(195 192 192);

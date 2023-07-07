@@ -1,8 +1,9 @@
 // import { Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { Section } from 'components/Section/Section';
 import Searchbar from 'components/Searchbar/Searchbar';
-import { searchMovies } from 'api/searchMovies';
 import { MoviesGallery } from 'components/MoviesGallery/MoviesGallery';
+import { searchMovies } from 'api/searchMovies';
 
 const Movies = () => {
   const [searchText, setSearchText] = useState('');
@@ -29,8 +30,10 @@ const Movies = () => {
 
   return (
     <>
-      <Searchbar onSubmit={handleSearch} />
-      <MoviesGallery data={dataMovies} />
+      <Section>
+        <Searchbar onSubmit={handleSearch} />
+        <MoviesGallery data={dataMovies} />
+      </Section>
     </>
   );
 };
