@@ -5,11 +5,13 @@ import { getMoviesTrending } from 'api/getMoviesTrending';
 
 const Home = () => {
   const [moviesTrending, setMoviesTrending] = useState([]);
+  const [MoviesPerPage, setMoviesPerPage] = useState(0);
 
   useEffect(() => {
     getMoviesTrending(1)
       .then(({ data: { results } }) => {
         setMoviesTrending([...results]);
+        setMoviesPerPage(results.length);
       })
       .catch(err => {
         console.log('ERROR', err);
@@ -20,7 +22,7 @@ const Home = () => {
   return (
     <>
       <Section title="Trending today">
-        <MoviesGallery data={moviesTrending} />
+        {MoviesPerPage > 0 && <MoviesGallery data={moviesTrending} />}
       </Section>
     </>
   );
