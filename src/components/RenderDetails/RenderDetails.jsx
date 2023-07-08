@@ -3,7 +3,7 @@ import noImageIcon from '../icons/noImageIcon.jpg';
 // import PropTypes from 'prop-types';
 
 export const RenderDetails = ({
-  data: { title, overview, poster_path, release_date, genres, vote_average },
+  data: { title, overview, poster_path, genres, vote_average },
 }) => {
   const score = Math.round(vote_average * 10);
 
@@ -22,11 +22,11 @@ export const RenderDetails = ({
           )}
         </s.Thumb>
         <div>
-          <h2>{title}</h2>
-          <p>User Score: {score}%</p>
-          <p>Overview</p>
-          <p>{overview}</p>
-          <p>Ganres</p>
+          <s.Title>{title}</s.Title>
+          <s.Score>User Score: {score}%</s.Score>
+          <s.Overview>Overview</s.Overview>
+          <s.Descr>{overview}</s.Descr>
+          <s.Ganres>Ganres</s.Ganres>
           <s.List>
             {genres.map(({ id, name }) => (
               <li key={id}>

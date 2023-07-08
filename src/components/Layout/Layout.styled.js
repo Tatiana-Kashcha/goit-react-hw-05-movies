@@ -7,6 +7,9 @@ export const StyledLink = styled(NavLink)`
   &.active {
     color: orangered;
   }
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 export const Header = styled.header`

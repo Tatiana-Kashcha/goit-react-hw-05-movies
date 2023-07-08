@@ -11,13 +11,38 @@ export const Thumb = styled.div`
   margin-right: 20px;
 `;
 
+export const Title = styled.h2`
+  font-size: 24px;
+  padding-top: 25px;
+  margin-bottom: 25px;
+`;
+
+export const Score = styled.p`
+  margin-bottom: 25px;
+`;
+
+export const Overview = styled.p`
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 25px;
+`;
+
+export const Descr = styled.p`
+  margin-bottom: 25px;
+`;
+
+export const Ganres = styled.p`
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 25px;
+`;
+
 export const List = styled.ul`
   display: flex;
   list-style: none;
-  margin-left: 20px;
   li {
     &:not(:last-child) {
-      margin-right: 10px;
+      margin-right: 15px;
     }
   }
 `;

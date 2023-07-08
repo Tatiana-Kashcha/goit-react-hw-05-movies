@@ -13,6 +13,6 @@ export const ButtonBack = styled.button`
   align-items: center;
   justify-content: space-evenly;
   &:active {
-    background-color: rgb(202 199 199 / 67%);
+    background-color: rgb(99 149 241);
   }
 `;
