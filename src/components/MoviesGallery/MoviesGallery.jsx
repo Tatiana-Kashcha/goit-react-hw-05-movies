@@ -8,7 +8,7 @@ export const MoviesGallery = ({ data }) => {
     <s.List>
       {data.map(({ id, title }) => (
         <li key={id}>
-          <Link key={id} to={`${id}`}>
+          <Link to={`/movies/${id}`}>
             <MoviesGalleryItem title={title} />
           </Link>
         </li>
@@ -25,3 +25,5 @@ MoviesGallery.propTypes = {
     })
   ).isRequired,
 };
+
+
