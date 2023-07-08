@@ -8,6 +8,7 @@ import { ButtonBack } from 'components/ButtonBack/ButtonBack';
 import { RenderDetails } from 'components/RenderDetails/RenderDetails';
 import { Additional } from 'components/Additional/Additional';
 import { Cast } from 'components/Cast/Cast';
+import { Reviews } from 'components/Reviews/Reviews';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -47,6 +48,7 @@ const MovieDetails = () => {
         {dataMovieId && <RenderDetails data={dataMovieId} />}
         <Additional />
         <Cast />
+        <Reviews />
       </Section>
     </>
   );
