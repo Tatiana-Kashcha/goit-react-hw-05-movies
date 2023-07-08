@@ -37,7 +37,7 @@ export const Cast = () => {
       <s.List>
         {dataCast.map(({ id, character, profile_path, name }) => (
           <li key={id}>
-            <div>
+            <s.Thumb>
               {profile_path ? (
                 <img
                   loading="lazy"
@@ -45,10 +45,10 @@ export const Cast = () => {
                   alt={name}
                 />
               ) : (
-                <img src={noImageIcon} alt={name} width="100" />
+                <img src={noImageIcon} alt={name} />
               )}
-            </div>
-            <p>{name}</p>
+            </s.Thumb>
+            <s.Name>{name}</s.Name>
             <p>Character: {character}</p>
           </li>
         ))}
