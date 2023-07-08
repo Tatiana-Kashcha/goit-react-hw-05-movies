@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getMovieCast } from 'api/getMovieCast';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import * as s from './Cast.styled';
+import noImageIcon from '../../icons/noImageIcon-250x375.png';
 
 export const Cast = () => {
   const { movieId } = useParams();
@@ -36,7 +37,17 @@ export const Cast = () => {
       <s.List>
         {dataCast.map(({ id, character, profile_path, name }) => (
           <li key={id}>
-            <img src={profile_path} alt={name} />
+            <div>
+              {profile_path ? (
+                <img
+                  loading="lazy"
+                  src={`https://image.tmdb.org/t/p/w500/${profile_path}`}
+                  alt={name}
+                />
+              ) : (
+                <img src={noImageIcon} alt={name} />
+              )}
+            </div>
             <p>{name}</p>
             <p>Character: {character}</p>
           </li>
