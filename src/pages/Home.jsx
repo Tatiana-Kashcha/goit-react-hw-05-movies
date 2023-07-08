@@ -7,7 +7,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const Home = () => {
   const [moviesTrending, setMoviesTrending] = useState([]);
-  const [MoviesPerPage, setMoviesPerPage] = useState(0);
+  const [moviesPerPage, setMoviesPerPage] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
 
   console.log(moviesTrending);
@@ -39,7 +39,7 @@ const Home = () => {
     <>
       <Section title="Trending today">
         {isLoading && Loading.arrows()}
-        {MoviesPerPage > 0 && <MoviesGallery data={moviesTrending} />}
+        {moviesPerPage > 0 && <MoviesGallery data={moviesTrending} />}
       </Section>
     </>
   );

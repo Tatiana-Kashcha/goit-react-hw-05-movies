@@ -8,6 +8,7 @@ import noImageIcon from '../icons/noImageIcon.jpg';
 export const Cast = () => {
   const { movieId } = useParams();
   const [dataCast, setDataCast] = useState([]);
+  const [castPerPage, setCastPerPage] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
 
   console.log(dataCast);
@@ -21,6 +22,7 @@ export const Cast = () => {
     getMovieCast(movieId)
       .then(data => {
         setDataCast(data.data.cast);
+        setCastPerPage(data.data.cast.length);
       })
       .catch(err => {
         console.log('ERROR', err);
@@ -34,25 +36,27 @@ export const Cast = () => {
   return (
     <>
       {isLoading && Loading.arrows()}
-      <s.List>
-        {dataCast.map(({ id, character, profile_path, name }) => (
-          <li key={id}>
-            <s.Thumb>
-              {profile_path ? (
-                <img
-                  loading="lazy"
-                  src={`https://image.tmdb.org/t/p/w500/${profile_path}`}
-                  alt={name}
-                />
-              ) : (
-                <img src={noImageIcon} alt={name} />
-              )}
-            </s.Thumb>
-            <s.Name>{name}</s.Name>
-            <p>Character: {character}</p>
-          </li>
-        ))}
-      </s.List>
+      {castPerPage > 0 && (
+        <s.List>
+          {dataCast.map(({ id, character, profile_path, name }) => (
+            <li key={id}>
+              <s.Thumb>
+                {profile_path ? (
+                  <img
+                    loading="lazy"
+                    src={`https://image.tmdb.org/t/p/w500/${profile_path}`}
+                    alt={name}
+                  />
+                ) : (
+                  <img src={noImageIcon} alt={name} />
+                )}
+              </s.Thumb>
+              <s.Name>{name}</s.Name>
+              <p>Character: {character}</p>
+            </li>
+          ))}
+        </s.List>
+      )}
     </>
   );
 };
