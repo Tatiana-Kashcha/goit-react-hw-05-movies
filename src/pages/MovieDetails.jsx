@@ -20,9 +20,7 @@ const MovieDetails = () => {
     setIsLoading(true);
 
     getMovieId(movieId)
-      .then(data => {
-        setDataMovieId(data);
-      })
+      .then(data => setDataMovieId(data))
       .catch(err => {
         console.log('ERROR', err);
       })

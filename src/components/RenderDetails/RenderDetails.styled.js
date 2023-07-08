@@ -21,7 +21,7 @@ export const DivDet = styled.div`
 `;
 
 export const Thumb = styled.div`
-  width: 300px;
+  width: 250px;
 `;
 
 export const DivAdd = styled.div`

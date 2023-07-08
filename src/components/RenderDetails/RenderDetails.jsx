@@ -3,7 +3,9 @@ import * as s from './RenderDetails.styled';
 import { ReactComponent as IconArrow } from '../icons/arrow-back.svg';
 import noImageIcon from '../icons/noImageIcon.jpg';
 
-export const RenderDetails = data => {
+export const RenderDetails = ({
+  data: { title, overview, poster_path, release_date, genres, vote_average },
+}) => {
   return (
     <>
       <s.ButtonBack type="button">
@@ -12,14 +14,14 @@ export const RenderDetails = data => {
       </s.ButtonBack>
       <s.DivDet>
         <s.Thumb>
-          {profile_path ? (
+          {poster_path ? (
             <img
               loading="lazy"
-              src={`https://image.tmdb.org/t/p/w500/${profile_path}`}
-              alt={name}
+              src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+              alt={title}
             />
           ) : (
-            <img src={noImageIcon} alt={name} />
+            <img src={noImageIcon} alt={title} />
           )}
         </s.Thumb>
       </s.DivDet>
