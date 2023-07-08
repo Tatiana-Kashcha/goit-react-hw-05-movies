@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getMovieCast } from 'api/getMovieCast';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import * as s from './Cast.styled';
-import noImageIcon from '../../icons/noImageIcon-250x375.png';
+import noImageIcon from '../icons/noImageIcon.jpg';
 
 export const Cast = () => {
   const { movieId } = useParams();
@@ -45,7 +45,7 @@ export const Cast = () => {
                   alt={name}
                 />
               ) : (
-                <img src={noImageIcon} alt={name} />
+                <img src={noImageIcon} alt={name} width="100" />
               )}
             </div>
             <p>{name}</p>
