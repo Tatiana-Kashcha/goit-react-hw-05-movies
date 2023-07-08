@@ -7,5 +7,17 @@ export const DivDet = styled.div`
 `;
 
 export const Thumb = styled.div`
-  width: 250px;
+  min-width: 250px;
+  margin-right: 20px;
+`;
+
+export const List = styled.ul`
+  display: flex;
+  list-style: none;
+  margin-left: 20px;
+  li {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
 `;

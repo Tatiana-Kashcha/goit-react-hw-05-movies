@@ -5,6 +5,8 @@ import noImageIcon from '../icons/noImageIcon.jpg';
 export const RenderDetails = ({
   data: { title, overview, poster_path, release_date, genres, vote_average },
 }) => {
+  const score = Math.round(vote_average * 10);
+
   return (
     <>
       <s.DivDet>
@@ -19,6 +21,20 @@ export const RenderDetails = ({
             <img src={noImageIcon} alt={title} />
           )}
         </s.Thumb>
+        <div>
+          <h2>{title}</h2>
+          <p>User Score: {score}%</p>
+          <p>Overview</p>
+          <p>{overview}</p>
+          <p>Ganres</p>
+          <s.List>
+            {genres.map(({ id, name }) => (
+              <li key={id}>
+                <p>{name}</p>
+              </li>
+            ))}
+          </s.List>
+        </div>
       </s.DivDet>
     </>
   );
