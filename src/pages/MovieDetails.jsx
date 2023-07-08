@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getMovieId } from 'api/getMovieId';
 import { Section } from 'components/Section/Section';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { ButtonBack } from 'components/ButtonBack/ButtonBack';
 import { RenderDetails } from 'components/RenderDetails/RenderDetails';
 import { Additional } from 'components/Additional/Additional';
@@ -10,7 +11,7 @@ import { Cast } from 'components/Cast/Cast';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
-  const [dataMovieId, setDataMovieId] = useState({});
+  const [dataMovieId, setDataMovieId] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   console.log(dataMovieId);
@@ -22,7 +23,13 @@ const MovieDetails = () => {
     setIsLoading(true);
 
     getMovieId(movieId)
-      .then(data => setDataMovieId(data.data))
+      .then(data => {
+        setDataMovieId(data.data);
+
+        if (!data.data) {
+          Notify.failure('Sorry, there are no details for this movie');
+        }
+      })
       .catch(err => {
         console.log('ERROR', err);
       })
@@ -37,7 +44,7 @@ const MovieDetails = () => {
       <Section>
         {isLoading && Loading.arrows()}
         <ButtonBack />
-        {!isLoading && <RenderDetails data={dataMovieId} />}
+        {dataMovieId && <RenderDetails data={dataMovieId} />}
         <Additional />
         <Cast />
       </Section>
