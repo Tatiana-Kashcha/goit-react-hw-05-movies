@@ -32,9 +32,9 @@ export const Reviews = () => {
 
   return (
     <>
+      {isLoading && Loading.arrows()}
       {!isLoading && (
         <div>
-          {isLoading && Loading.arrows()}
           {reviewsPerPage > 0 && (
             <s.List>
               {dataReviews.map(({ id, author, content }) => (
