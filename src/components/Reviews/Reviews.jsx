@@ -4,7 +4,7 @@ import { getMovieReviews } from 'api/getMovieReviews';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import * as s from './Reviews.styled';
 
-export const Reviews = () => {
+const Reviews = () => {
   const { movieId } = useParams();
   const [dataReviews, setDataReviews] = useState([]);
   const [reviewsPerPage, setReviewsPerPage] = useState(null);
@@ -53,3 +53,4 @@ export const Reviews = () => {
     </>
   );
 };
+export default Reviews;

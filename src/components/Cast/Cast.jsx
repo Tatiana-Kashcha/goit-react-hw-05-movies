@@ -5,7 +5,7 @@ import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import * as s from './Cast.styled';
 import noImageIcon from '../icons/noImageIcon.jpg';
 
-export const Cast = () => {
+const Cast = () => {
   const { movieId } = useParams();
   const [dataCast, setDataCast] = useState([]);
   const [castPerPage, setCastPerPage] = useState(0);
@@ -58,3 +58,4 @@ export const Cast = () => {
     </>
   );
 };
+export default Cast;

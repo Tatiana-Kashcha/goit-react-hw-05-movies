@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import { getMovieId } from 'api/getMovieId';
 import { Section } from 'components/Section/Section';
@@ -14,8 +14,10 @@ const MovieDetails = () => {
   const [dataMovieId, setDataMovieId] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
-  const backLink = location.state?.from ?? '/';
+  const backLinkRef = useRef(location.state?.from ?? '/');
+  const backLink = backLinkRef.current;
   console.log(location);
+  console.log(backLink);
 
   useEffect(() => {
     if (!movieId) {
@@ -47,7 +49,9 @@ const MovieDetails = () => {
         <ButtonBack to={backLink} />
         {dataMovieId && <RenderDetails data={dataMovieId} />}
         <Additional />
-        <Outlet />
+        <Suspense>
+          <Outlet />
+        </Suspense>
       </Section>
     </>
   );

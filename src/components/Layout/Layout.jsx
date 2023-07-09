@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
 import * as s from './Layout.styled';
 
 export const Layout = () => {
@@ -17,7 +18,9 @@ export const Layout = () => {
         </s.Container>
       </s.Header>
       <main>
-        <Outlet />
+        <Suspense>
+          <Outlet />
+        </Suspense>
       </main>
     </>
   );
