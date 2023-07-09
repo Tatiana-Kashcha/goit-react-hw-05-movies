@@ -43,7 +43,9 @@ export const Reviews = () => {
           ))}
         </s.List>
       )}
-      <s.NoReviews>We don`t have any reviews for this movie.</s.NoReviews>
+      {reviewsPerPage === 0 && (
+        <s.NoReviews>We don`t have any reviews for this movie.</s.NoReviews>
+      )}
     </>
   );
 };
