@@ -49,8 +49,8 @@ export const Cast = () => {
                   <img src={noImageIcon} alt={name} />
                 )}
               </s.Thumb>
-              <s.Name>{name}</s.Name>
-              <p>Character: {character}</p>
+              {name && <s.Name>{name}</s.Name>}
+              {character && <p>Character: {character}</p>}
             </li>
           ))}
         </s.List>

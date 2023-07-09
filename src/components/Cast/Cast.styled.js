@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const List = styled.ul`
   margin-left: 40px;
-  margin-top: 20px;
+  padding-top: 20px;
   li {
     &:not(:last-child) {
       margin-bottom: 20px;
