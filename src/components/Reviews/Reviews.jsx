@@ -32,19 +32,23 @@ export const Reviews = () => {
 
   return (
     <>
-      {isLoading && Loading.arrows()}
-      {reviewsPerPage > 0 && (
-        <s.List>
-          {dataReviews.map(({ id, author, content }) => (
-            <li key={id}>
-              <s.Author>Author: {author}</s.Author>
-              <p>{content}</p>
-            </li>
-          ))}
-        </s.List>
-      )}
-      {reviewsPerPage === 0 && (
-        <s.NoReviews>We don`t have any reviews for this movie.</s.NoReviews>
+      {!isLoading && (
+        <div>
+          {isLoading && Loading.arrows()}
+          {reviewsPerPage > 0 && (
+            <s.List>
+              {dataReviews.map(({ id, author, content }) => (
+                <li key={id}>
+                  <s.Author>Author: {author}</s.Author>
+                  <p>{content}</p>
+                </li>
+              ))}
+            </s.List>
+          )}
+          {reviewsPerPage === 0 && (
+            <s.NoReviews>We don`t have any reviews for this movie.</s.NoReviews>
+          )}
+        </div>
       )}
     </>
   );
