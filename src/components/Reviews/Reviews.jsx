@@ -33,7 +33,7 @@ export const Reviews = () => {
   return (
     <>
       {isLoading && Loading.arrows()}
-      {reviewsPerPage > 0 ? (
+      {reviewsPerPage > 0 && (
         <s.List>
           {dataReviews.map(({ id, author, content }) => (
             <li key={id}>
@@ -42,9 +42,8 @@ export const Reviews = () => {
             </li>
           ))}
         </s.List>
-      ) : (
-        <s.NoReviews>We don`t have any reviews for this movie.</s.NoReviews>
       )}
+      <s.NoReviews>We don`t have any reviews for this movie.</s.NoReviews>
     </>
   );
 };
