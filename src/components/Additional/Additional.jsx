@@ -7,10 +7,10 @@ export const Additional = () => {
       <s.Description>Additional information</s.Description>
       <s.List>
         <li>
-          <Link>Cast</Link>
+          <Link to="cast">Cast</Link>
         </li>
         <li>
-          <Link>Reviews</Link>
+          <Link to="reviews">Reviews</Link>
         </li>
       </s.List>
     </s.DivAdd>
