@@ -7,7 +7,7 @@ import * as s from './Reviews.styled';
 export const Reviews = () => {
   const { movieId } = useParams();
   const [dataReviews, setDataReviews] = useState([]);
-  const [reviewsPerPage, setReviewsPerPage] = useState(0);
+  const [reviewsPerPage, setReviewsPerPage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
