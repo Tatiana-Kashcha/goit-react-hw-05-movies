@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Section = styled.section`
-  overflow: hidden;
+  padding-bottom: 50px;
 `;
 
 export const Container = styled.div`
