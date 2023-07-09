@@ -15,8 +15,6 @@ const MovieDetails = () => {
   const [dataMovieId, setDataMovieId] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  console.log(dataMovieId);
-
   useEffect(() => {
     if (!movieId) {
       return;

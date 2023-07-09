@@ -12,8 +12,6 @@ const Movies = () => {
   const [searchMoviesPerPage, setSearchMoviesPerPage] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
 
-  console.log(dataMovies);
-
   useEffect(() => {
     if (!searchText) {
       return;

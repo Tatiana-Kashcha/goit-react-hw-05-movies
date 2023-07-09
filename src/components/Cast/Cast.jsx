@@ -11,8 +11,6 @@ export const Cast = () => {
   const [castPerPage, setCastPerPage] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
 
-  console.log(dataCast);
-
   useEffect(() => {
     if (!movieId) {
       return;

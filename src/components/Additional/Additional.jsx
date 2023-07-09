@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import * as s from './Additional.styled';
-// import PropTypes from 'prop-types';
 
 export const Additional = () => {
   return (

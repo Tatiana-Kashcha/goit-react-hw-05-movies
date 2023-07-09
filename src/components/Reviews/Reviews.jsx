@@ -10,8 +10,6 @@ export const Reviews = () => {
   const [reviewsPerPage, setReviewsPerPage] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
 
-  console.log(dataReviews);
-
   useEffect(() => {
     if (!movieId) {
       return;
