@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import { getMovieId } from 'api/getMovieId';
 import { Section } from 'components/Section/Section';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
@@ -13,6 +13,9 @@ const MovieDetails = () => {
   const { movieId } = useParams();
   const [dataMovieId, setDataMovieId] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const location = useLocation();
+  const backLink = location.state?.from ?? '/';
+  console.log(location);
 
   useEffect(() => {
     if (!movieId) {
@@ -41,7 +44,7 @@ const MovieDetails = () => {
     <>
       <Section>
         {isLoading && Loading.arrows()}
-        <ButtonBack />
+        <ButtonBack to={backLink} />
         {dataMovieId && <RenderDetails data={dataMovieId} />}
         <Additional />
         <Outlet />
