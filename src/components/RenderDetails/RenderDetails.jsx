@@ -1,6 +1,6 @@
 import * as s from './RenderDetails.styled';
 import noImageIcon from '../icons/noImageIcon.jpg';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export const RenderDetails = ({
   data: { title, overview, poster_path, genres, vote_average },
@@ -38,4 +38,21 @@ export const RenderDetails = ({
       </s.DivDet>
     </>
   );
+};
+
+RenderDetails.propTypes = {
+  data: PropTypes.objectOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      overview: PropTypes.string,
+      poster_path: PropTypes.string,
+      vote_average: PropTypes.number,
+      genres: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.number.isRequired,
+          name: PropTypes.string.isRequired,
+        })
+      ),
+    })
+  ),
 };

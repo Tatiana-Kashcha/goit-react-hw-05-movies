@@ -1,6 +1,6 @@
 import { ReactComponent as IconArrow } from '../icons/arrow-back.svg';
 import * as s from './ButtonBack.styled';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export const ButtonBack = ({ to }) => {
   return (
@@ -11,6 +11,6 @@ export const ButtonBack = ({ to }) => {
   );
 };
 
-// ButtonBack.propTypes = {
-//   to: PropTypes.     .isRequired,
-// };
+ButtonBack.propTypes = {
+  to: PropTypes.object.isRequired,
+};

@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 
 export const MoviesGallery = ({ data }) => {
   const location = useLocation();
-  console.log(location);
 
   return (
     <s.List>
