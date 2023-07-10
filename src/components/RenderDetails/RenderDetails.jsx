@@ -12,13 +12,13 @@ export const RenderDetails = ({
       <s.DivDet>
         <s.Thumb>
           {poster_path ? (
-            <img
+            <s.Poster
               loading="lazy"
               src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
               alt={title}
             />
           ) : (
-            <img src={noImageIcon} alt={title} />
+            <s.Stopper src={noImageIcon} alt={title} />
           )}
         </s.Thumb>
         <div>

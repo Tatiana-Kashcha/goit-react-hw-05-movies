@@ -7,8 +7,21 @@ export const DivDet = styled.div`
 `;
 
 export const Thumb = styled.div`
-  width: 250px;
+  min-width: 250px;
+  height: 373px;
   margin-right: 20px;
+`;
+
+export const Poster = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
+export const Stopper = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 export const Title = styled.h2`
