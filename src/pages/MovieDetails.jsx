@@ -16,8 +16,6 @@ const MovieDetails = () => {
   const location = useLocation();
   const backLinkRef = useRef(location.state?.from ?? '/');
   const backLink = backLinkRef.current;
-  console.log(location);
-  console.log(backLink);
 
   useEffect(() => {
     if (!movieId) {
