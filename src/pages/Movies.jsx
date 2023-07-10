@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Section } from 'components/Section/Section';
 import Searchbar from 'components/Searchbar/Searchbar';
 import { MoviesGallery } from 'components/MoviesGallery/MoviesGallery';
@@ -7,10 +8,11 @@ import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const Movies = () => {
-  const [searchText, setSearchText] = useState('');
   const [dataMovies, setDataMovies] = useState([]);
   const [searchMoviesPerPage, setSearchMoviesPerPage] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const searchText = searchParams.get('searchText');
 
   useEffect(() => {
     if (!searchText) {
@@ -39,7 +41,7 @@ const Movies = () => {
   }, [searchText]);
 
   const handleSearch = searchText => {
-    setSearchText(searchText);
+    setSearchParams({ searchText: searchText });
   };
 
   return (
