@@ -22,11 +22,11 @@ export const RenderDetails = ({
           )}
         </s.Thumb>
         <div>
-          <s.Title>{title}</s.Title>
+          {title && <s.Title>{title}</s.Title>}
           <s.Score>User Score: {score}%</s.Score>
-          <s.Overview>Overview</s.Overview>
+          {overview && <s.Overview>Overview</s.Overview>}
           <s.Descr>{overview}</s.Descr>
-          <s.Ganres>Ganres</s.Ganres>
+          {genres.length > 0 && <s.Ganres>Ganres</s.Ganres>}
           <s.List>
             {genres.map(({ id, name }) => (
               <li key={id}>

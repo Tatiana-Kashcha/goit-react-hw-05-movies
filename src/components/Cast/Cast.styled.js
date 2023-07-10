@@ -18,3 +18,7 @@ export const Thumb = styled.div`
 export const Name = styled.p`
   margin-bottom: 20px;
 `;
+
+export const NoCast = styled.p`
+  padding-top: 20px;
+`;
