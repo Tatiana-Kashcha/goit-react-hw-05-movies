@@ -7,7 +7,7 @@ export const DivDet = styled.div`
 `;
 
 export const Thumb = styled.div`
-  min-width: 250px;
+  width: 250px;
   margin-right: 20px;
 `;
 
