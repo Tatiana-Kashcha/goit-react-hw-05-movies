@@ -41,18 +41,16 @@ export const RenderDetails = ({
 };
 
 RenderDetails.propTypes = {
-  data: PropTypes.objectOf(
-    PropTypes.shape({
-      title: PropTypes.string,
-      overview: PropTypes.string,
-      poster_path: PropTypes.string,
-      vote_average: PropTypes.number,
-      genres: PropTypes.arrayOf(
-        PropTypes.shape({
-          id: PropTypes.number.isRequired,
-          name: PropTypes.string.isRequired,
-        })
-      ),
-    })
-  ),
+  data: PropTypes.shape({
+    title: PropTypes.string,
+    overview: PropTypes.string,
+    poster_path: PropTypes.string,
+    vote_average: PropTypes.number,
+    genres: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+      })
+    ),
+  }),
 };
